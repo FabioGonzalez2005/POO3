@@ -24,3 +24,8 @@ class Convertidor:
             else:
                 entero += romanos[self.romano[i]]
         return entero
+
+if __name__ == "__main__":
+    convertidor = Convertidor(50, 'LX')
+    print(convertidor.convertirARomano())
+    print(convertidor.convertirAEntero())
