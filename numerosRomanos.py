@@ -15,3 +15,12 @@ class Convertidor:
             i += 1
         return numeral
 
+    def convertirAEntero(self):
+        romanos = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 100}
+        entero = 0
+        for i in range(len(self.romano)):
+            if i > 0 and romanos[self.romano[i]] > romanos[self.romano[i - 1]]:
+                entero += romanos[self.romano[i]] - 2 * romanos[self.romano[i - 1]]
+            else:
+                entero += romanos[self.romano[i]]
+        return entero
