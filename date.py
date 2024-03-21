@@ -9,16 +9,17 @@ class Date:
         Ojo con los años bisiestos.
         El 1-1-1900 fue lunes.
         '''
+        
         def __init__(self, day: int, month: int, year: int):
-        self.day = day
-        self.month = month
-        self.year = year
-        if day <= 0 or day > 31:
-            day = 1
-        if month <= 0 or month > 12:
-            month = 1
-        if year < 1900 or year > 2050:
-            year = 1900
+            self.day = day
+            self.month = month
+            self.year = year
+            if day <= 0 or day > 31:
+                day = 1
+            if month <= 0 or month > 12:
+                month = 1
+            if year < 1900 or year > 2050:
+                year = 1900
 
     @staticmethod
     def is_leap_year(year: int) -> bool:
