@@ -35,7 +35,10 @@ class Date:
                 return 29  
             else:
                 return 28
-
+        elif month in ["ENERO", "MARZO", "MAYO", "JULIO", "AGOSTO", "OCTUBRE", "DICIEMBRE"]:
+            return 31
+        else:
+            return 30
 
     def get_delta_days(self) -> int:
         '''Número de días transcurridos desde el 1-1-1900 hasta la fecha'''
