@@ -31,7 +31,7 @@ class Date:
     @staticmethod
     def days_in_month(month: int, year: int) -> int:
         if month == "FEBRERO":
-            if Date.is_leap_year(year):
+            if Date.is_leap_year(year) == True:
                 return 29  
             else:
                 return 28
