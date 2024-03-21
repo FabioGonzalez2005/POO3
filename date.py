@@ -24,13 +24,16 @@ class Date:
     @staticmethod
     def is_leap_year(year: int) -> bool:
         resultado = False
-        if year % 4 == 0 and year % 100 != 0 or year % 4 == 0 and year % 100 == 0 and year % 400 == 0:
+        if year % 4 == 0 and year % 100 != 0 and year % 400 == 0:
             resultado = True
         return resultado
 
     @staticmethod
     def days_in_month(month: int, year: int) -> int:
-        ...
+        if month == "FEBRERO":
+            if Date.is_leap_year(year):
+                return 29  
+
 
     def get_delta_days(self) -> int:
         '''Número de días transcurridos desde el 1-1-1900 hasta la fecha'''
