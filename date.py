@@ -33,6 +33,8 @@ class Date:
         if month == "FEBRERO":
             if Date.is_leap_year(year):
                 return 29  
+            else:
+                return 28
 
 
     def get_delta_days(self) -> int:
