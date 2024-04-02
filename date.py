@@ -74,7 +74,6 @@ class Date:
 
     def __str__(self):
         '''MARTES 2 DE SEPTIEMBRE DE 2003'''
-        ...
 
     def __add__(self, days: int) -> Date:
         '''Sumar un número de días a la fecha'''
@@ -94,6 +93,3 @@ class Date:
 
     def __eq__(self, other) -> bool:
         ...
-
-if "__name__" == "__main__":
-    main()
