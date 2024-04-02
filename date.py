@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-
 class Date:
     def __init__(self, day: int, month: int, year: int):
         '''Validar día, mes y año. Se comprobará si la fecha es correcta
@@ -81,13 +80,16 @@ class Date:
 
     def __add__(self, days: int) -> Date:
         '''Sumar un número de días a la fecha'''
-        ...
 
     def __sub__(self, other: Date | int) -> int | Date:
         '''Dos opciones:
-        1) Restar una fecha a otra fecha -> Número de días
-        2) Restar un número de días la fecha -> Nueva fecha'''
-        ...
+        1) Restar una fecha a otra fecha -> Número de días'''
+        if isinstance(other, Date):
+            return self.get_delta_days() - other.get_delta_days()
+        
+        '''2) Restar un número de días la fecha -> Nueva fecha'''
+        
+
 
     def __lt__(self, other: Date) -> bool:
         return self.get_delta_days() < other.get_delta_days()
