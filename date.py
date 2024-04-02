@@ -94,5 +94,5 @@ class Date:
     def __gt__(self, other: Date) -> bool:
         return self.get_delta_days() > other.get_delta_days()
 
-    def __eq__(self, other) -> bool:
-        ...
+    def __eq__(self, other: Date) -> bool:
+        return self.get_delta_days() == other.get_delta_days()
