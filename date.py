@@ -9,7 +9,6 @@ class Date:
         Ojo con los años bisiestos.
         El 1-1-1900 fue lunes.
         '''
-        
         def __init__(self, day: int, month: int, year: int):
             self.day = day
             self.month = month
@@ -23,6 +22,7 @@ class Date:
 
     @staticmethod
     def is_leap_year(year: int) -> bool:
+        '''Calcular si el año es bisiesto'''
         resultado = False
         if year % 4 == 0 and year % 100 != 0 and year % 400 == 0:
             resultado = True
@@ -30,6 +30,7 @@ class Date:
 
     @staticmethod
     def days_in_month(month: int, year: int) -> int:
+        '''Calcular cuántos días tiene el mes'''
         if month == "FEBRERO":
             if Date.is_leap_year(year) == True:
                 return 29  
@@ -42,7 +43,15 @@ class Date:
 
     def get_delta_days(self) -> int:
         '''Número de días transcurridos desde el 1-1-1900 hasta la fecha'''
-        ...
+        for x in range(1900, self.year):
+            if Date.is_leap_year(x):
+                days += 366
+            else:
+                days += 365
+        for y in range(1, self.month):
+            days += Date.days_in_month(m, self.year)
+        days += self.day - 1
+        return days
 
     @property
     def weekday(self) -> int:
@@ -56,7 +65,7 @@ class Date:
     @property
     def short_date(self) -> str:
         '''02/09/2003'''
-        ...
+        return f"{self.day:02d}/{self.month:02d}/{self.year}"
 
     def __str__(self):
         '''MARTES 2 DE SEPTIEMBRE DE 2003'''
@@ -80,3 +89,6 @@ class Date:
 
     def __eq__(self, other) -> bool:
         ...
+
+if "__name__" == "__main__":
+    main()
