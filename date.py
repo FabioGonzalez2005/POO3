@@ -88,8 +88,6 @@ class Date:
             return self.get_delta_days() - other.get_delta_days()
         
         '''2) Restar un número de días la fecha -> Nueva fecha'''
-        
-
 
     def __lt__(self, other: Date) -> bool:
         return self.get_delta_days() < other.get_delta_days()
