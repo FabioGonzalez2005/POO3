@@ -42,6 +42,7 @@ class Date:
 
     def get_delta_days(self) -> int:
         '''Número de días transcurridos desde el 1-1-1900 hasta la fecha'''
+        days = 0
         for x in range(1900, self.year):
             if Date.is_leap_year(x):
                 days += 366
