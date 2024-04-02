@@ -61,7 +61,8 @@ class Date:
 
     @property
     def is_weekend(self) -> bool:
-
+        '''Saber si el día es entre lunes y viernes.'''
+        
     @property
     def short_date(self) -> str:
         '''02/09/2003'''
