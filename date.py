@@ -73,7 +73,11 @@ class Date:
         return f"{self.day:02d}/{self.month:02d}/{self.year}"
 
     def __str__(self):
-        '''MARTES 2 DE SEPTIEMBRE DE 2003'''
+        '''Ejemplo: MARTES 2 DE SEPTIEMBRE DE 2003'''
+
+        dias_semana = ["DOMINGO", "LUNES", "MARTES", "MIÉRCOLES", "JUEVES", "VIERNES", "SABADO"]
+        meses = ["ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE"]
+        return f"{dias_semana[self.weekday]} {self.weekday} DE {meses[self.month]} DE {self.year}"
 
     def __add__(self, days: int) -> Date:
         '''Sumar un número de días a la fecha'''
