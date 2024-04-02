@@ -48,7 +48,7 @@ class Date:
             else:
                 days += 365
         for y in range(1, self.month):
-            days += Date.days_in_month(m, self.year)
+            days += Date.days_in_month(y, self.year)
         days += self.day - 1
         return days
 
