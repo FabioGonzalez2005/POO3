@@ -7,6 +7,7 @@ class FileWriter:
             self.i = open(self.fileName, "w+")
 
     def write(self, mensaje:str)->str:
+        self.i.seek(0, 2)
         self.i.write(mensaje)
 
     def read(self)->str:
@@ -16,11 +17,11 @@ class FileWriter:
         self.i.close()
 
 def main():
-    pruebaw = FileWriter("fileWriter.txt")
+    pruebaw = FileWriter("prueba.csv")
     pruebaw.write("Hola")
     pruebaw.close()
 
-    pruebar = FileWriter("fileWriter.txt")
+    pruebar = FileWriter("prueba.csv")
     print(pruebar.read())
     pruebar.close()
 
